@@ -33,7 +33,7 @@ export default function Dashboard() {
       </div>
 
       {/* KPI Cards */}
-      <div className="grid-4 mb-xl" style={{ gridTemplateColumns: 'repeat(5, 1fr)' }}>
+      <div className="admin-kpi-grid mb-xl">
         {statCards.map((card, i) => (
           <div key={i} className="stat-card">
             <div className="stat-card-accent" style={{ background: card.color }} />
@@ -51,7 +51,7 @@ export default function Dashboard() {
 
       {/* Low Stock Warning Box */}
       {stats.lowStock.length > 0 && (
-        <div style={{ background: 'rgba(230, 126, 34, 0.1)', border: '1px solid rgba(230, 126, 34, 0.3)', borderRadius: 'var(--radius-lg)', padding: 'var(--space-lg)', marginBottom: 'var(--space-xl)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ background: 'rgba(230, 126, 34, 0.1)', border: '1px solid rgba(230, 126, 34, 0.3)', borderRadius: 'var(--radius-lg)', padding: 'var(--space-lg)', marginBottom: 'var(--space-xl)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <AlertTriangle color="var(--orange)" size={24} />
             <div>
@@ -66,7 +66,7 @@ export default function Dashboard() {
       )}
 
       {/* Recent Orders & Quick Overview */}
-      <div className="grid-2" style={{ gridTemplateColumns: '2fr 1fr', alignItems: 'start' }}>
+      <div className="admin-dashboard-grid">
         {/* Recent Orders Table */}
         <div className="table-wrapper">
           <div className="flex-between" style={{ padding: 'var(--space-lg)', borderBottom: '1px solid var(--gray-border)' }}>

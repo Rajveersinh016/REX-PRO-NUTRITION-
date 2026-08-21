@@ -75,7 +75,7 @@ export default function Coupons() {
       {showAddForm && (
         <div style={{ background: 'var(--black-card)', border: '1px solid var(--gold)', borderRadius: 'var(--radius-lg)', padding: 'var(--space-xl)', marginBottom: 'var(--space-xl)' }}>
           <h3 className="heading-sm mb-lg" style={{ color: 'var(--gold)' }}>CREATE DISCOUNT COUPON</h3>
-          <form onSubmit={handleCreate} style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 'var(--space-md)' }}>
+          <form onSubmit={handleCreate} className="coupon-form-grid">
             <div className="form-group">
               <label className="form-label">Coupon Code *</label>
               <input type="text" required placeholder="e.g. SUMMER20" value={formData.code || ''} onChange={e => setFormData({ ...formData, code: e.target.value })} className="form-input" style={{ textTransform: 'uppercase' }} />

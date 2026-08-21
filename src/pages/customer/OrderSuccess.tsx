@@ -73,7 +73,7 @@ export default function OrderSuccess() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-lg)', fontSize: 14 }}>
+            <div className="form-grid-2" style={{ fontSize: 14 }}>
               <div>
                 <div style={{ fontSize: 12, color: 'var(--gray-text)', marginBottom: 4 }}>Delivery Address</div>
                 <div style={{ color: 'var(--white-muted)' }}>{order.address.line1}, {order.address.area}</div>

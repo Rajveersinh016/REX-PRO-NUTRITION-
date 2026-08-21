@@ -85,7 +85,7 @@ export default function AddEditProduct() {
         {/* Basic Details */}
         <div style={{ background: 'var(--black-card)', border: '1px solid var(--gray-border)', borderRadius: 'var(--radius-lg)', padding: 'var(--space-xl)' }}>
           <h3 className="heading-sm mb-lg" style={{ color: 'var(--gold)' }}>1. BASIC INFORMATION</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-md)' }}>
+          <div className="form-grid-2">
             <div className="form-group" style={{ gridColumn: 'span 2' }}>
               <label className="form-label">Product Name *</label>
               <input type="text" required value={formData.name || ''} onChange={e => handleChange('name', e.target.value)} className="form-input" placeholder="e.g. Whey Gold Standard 100%" />
@@ -113,7 +113,7 @@ export default function AddEditProduct() {
         {/* Pricing & Stock */}
         <div style={{ background: 'var(--black-card)', border: '1px solid var(--gray-border)', borderRadius: 'var(--radius-lg)', padding: 'var(--space-xl)' }}>
           <h3 className="heading-sm mb-lg" style={{ color: 'var(--gold)' }}>2. PRICING & INVENTORY</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 'var(--space-md)' }}>
+          <div className="form-grid-4">
             <div className="form-group">
               <label className="form-label">Selling Price (₹) *</label>
               <input type="number" required value={formData.price || ''} onChange={e => handleChange('price', Number(e.target.value))} className="form-input" />
@@ -136,7 +136,7 @@ export default function AddEditProduct() {
         {/* Variants & Image */}
         <div style={{ background: 'var(--black-card)', border: '1px solid var(--gray-border)', borderRadius: 'var(--radius-lg)', padding: 'var(--space-xl)' }}>
           <h3 className="heading-sm mb-lg" style={{ color: 'var(--gold)' }}>3. VARIANTS & IMAGES</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-md)' }}>
+          <div className="form-grid-2">
             <div className="form-group">
               <label className="form-label">Flavours (comma separated)</label>
               <input type="text" value={formData.flavours?.join(', ') || ''} onChange={e => handleChange('flavours', e.target.value.split(',').map(s => s.trim()))} className="form-input" placeholder="Chocolate, Vanilla" />

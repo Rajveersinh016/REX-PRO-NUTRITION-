@@ -1208,7 +1208,7 @@ ul, ol { list-style: none; }
 .data-table td { padding: var(--space-md) var(--space-lg); border-bottom: 1px solid rgba(44,44,44,0.5); vertical-align: middle; font-size: 14px; }
 .data-table tr:hover td { background: rgba(255,255,255,0.02); }
 .data-table tr:last-child td { border-bottom: none; }
-.table-wrapper { background: var(--black-card); border: 1px solid var(--gray-border); border-radius: var(--radius-lg); overflow: hidden; }
+.table-wrapper { background: var(--black-card); border: 1px solid var(--gray-border); border-radius: var(--radius-lg); overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
 .status-badge {
   display: inline-flex;
@@ -1394,3 +1394,67 @@ ul, ol { list-style: none; }
 /* ---- Page transition wrapper ---- */
 .page-enter { animation: pageFadeIn 0.4s ease; }
 @keyframes pageFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ---- Responsive Helper Grids & Admin Mobile Navigation ---- */
+.home-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg); text-align: center; }
+.insta-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: var(--space-xl); max-width: 800px; margin: 0 auto var(--space-xl); }
+.coupon-form-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); }
+.admin-kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-md); }
+.admin-dashboard-grid { display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-lg); align-items: start; }
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+.form-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); }
+
+.admin-mobile-nav { display: none; background: var(--charcoal); border-bottom: 1px solid var(--gray-border); padding: 8px 12px; }
+.admin-mobile-nav-inner { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.admin-mobile-nav-inner::-webkit-scrollbar { display: none; }
+.admin-mobile-nav-chip {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: var(--black-card);
+  border: 1px solid var(--gray-border);
+  color: var(--gray-text);
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.admin-mobile-nav-chip.active {
+  background: rgba(212,175,55,0.15);
+  color: var(--gold);
+  border-color: var(--gold);
+}
+.admin-mobile-logout-btn { display: none; }
+
+@media (max-width: 1024px) {
+  .admin-mobile-nav { display: block; }
+  .admin-mobile-logout-btn { display: flex; }
+  .admin-topbar-brand { display: none; }
+  .admin-topbar-email { display: none; }
+  .admin-topbar { padding: 0 var(--space-md); }
+  .admin-content { padding: var(--space-md); }
+  .admin-kpi-grid { grid-template-columns: repeat(3, 1fr); }
+  .admin-dashboard-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .home-stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+  .insta-grid { grid-template-columns: repeat(3, 1fr); }
+  .coupon-form-grid { grid-template-columns: repeat(2, 1fr); }
+  .admin-kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .form-grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .home-stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-sm); }
+  .insta-grid { grid-template-columns: repeat(2, 1fr); }
+  .coupon-form-grid { grid-template-columns: 1fr; }
+  .admin-kpi-grid { grid-template-columns: 1fr; }
+  .form-grid-2 { grid-template-columns: 1fr; }
+  .form-grid-4 { grid-template-columns: 1fr; }
+  .heading-hero { font-size: 40px; }
+  .product-actions { flex-direction: column; width: 100%; }
+  .product-actions button { width: 100%; }
+}
+

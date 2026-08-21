@@ -151,7 +151,7 @@ export default function Home() {
       {/* ---- STATS BAR ---- */}
       <div style={{ background: 'var(--charcoal)', borderTop: '1px solid var(--gray-border)', borderBottom: '1px solid var(--gray-border)', padding: '24px 0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 'var(--space-lg)', textAlign: 'center' }}>
+          <div className="home-stats-grid">
             {[
               { value: 500, label: 'Happy Customers', suffix: '+' },
               { value: 50, label: 'Products', suffix: '+' },
@@ -383,7 +383,7 @@ export default function Home() {
           <div className="section-label">Social</div>
           <h2 className="heading-lg" style={{ marginBottom: 'var(--space-md)' }}>FOLLOW REX-PRO NUTRITION</h2>
           <p style={{ color: 'var(--gray-text)', marginBottom: 'var(--space-xl)' }}>Stay updated with our latest products, offers, and fitness tips.</p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 8, marginBottom: 'var(--space-xl)', maxWidth: 800, margin: '0 auto var(--space-xl)' }}>
+          <div className="insta-grid">
             {[
               'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&q=80',
               'https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=300&q=80',

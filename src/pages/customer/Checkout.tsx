@@ -157,7 +157,7 @@ export default function Checkout() {
               <h3 className="heading-sm mb-lg" style={{ color: 'var(--gold)', display: 'flex', alignItems: 'center', gap: 8 }}>
                 1. CONTACT INFORMATION
               </h3>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-md)' }}>
+              <div className="form-grid-2">
                 <div className="form-group" style={{ gridColumn: 'span 2' }}>
                   <label className="form-label">Full Name *</label>
                   <input type="text" name="name" required value={formData.name} onChange={handleInputChange} className="form-input" />
@@ -178,7 +178,7 @@ export default function Checkout() {
               <h3 className="heading-sm mb-lg" style={{ color: 'var(--gold)', display: 'flex', alignItems: 'center', gap: 8 }}>
                 2. DELIVERY ADDRESS
               </h3>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-md)' }}>
+              <div className="form-grid-2">
                 <div className="form-group" style={{ gridColumn: 'span 2' }}>
                   <label className="form-label">Flat, House No., Building, Street *</label>
                   <input type="text" name="line1" required value={formData.line1} onChange={handleInputChange} className="form-input" />

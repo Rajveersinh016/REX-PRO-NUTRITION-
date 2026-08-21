@@ -41,7 +41,7 @@ export default function Settings() {
         {/* Store Info */}
         <div style={{ background: 'var(--black-card)', border: '1px solid var(--gray-border)', borderRadius: 'var(--radius-lg)', padding: 'var(--space-xl)' }}>
           <h3 className="heading-sm mb-lg" style={{ color: 'var(--gold)' }}>STORE DETAILS</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-md)' }}>
+          <div className="form-grid-2">
             <div className="form-group" style={{ gridColumn: 'span 2' }}>
               <label className="form-label">Store Business Name</label>
               <input type="text" value={storeInfo.storeName} onChange={e => setStoreInfo({ ...storeInfo, storeName: e.target.value })} className="form-input" />
